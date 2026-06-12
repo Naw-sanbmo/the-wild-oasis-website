@@ -1,6 +1,6 @@
-import Navigation from "../components/navigation";
+import Navigation from "../components/Navigation";
 
-export default function AccountPage() {
+export default function Page() {
   return (
     <div>
       <Navigation />
