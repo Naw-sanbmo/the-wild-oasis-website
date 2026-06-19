@@ -1,3 +1,4 @@
+import Header from "./_components/Header";
 import Logo from "./_components/Logo";
 import Navigation from "./_components/Navigation";
 
@@ -23,14 +24,13 @@ export default function RootLayour({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${josefin.className} bg-primary-950 text-primary-100 min-h-screen`}
+        className={`${josefin.className} antialiased bg-primary-950 text-primary-100 min-h-screen flex flex-col`}
       >
-        <header>
-          <Logo />
-          <Navigation />
-        </header>
-        <main>{children}</main>
-        <footer>the-wild-oasis@naw all right reserved 2026</footer>
+        <Header />
+
+        <div className="flex-1 py-12 px-8">
+          <main className="max-w-7xl mx-auto">{children}</main>
+        </div>
       </body>
     </html>
   );
