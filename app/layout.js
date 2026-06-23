@@ -11,7 +11,7 @@ const josefin = Josefin_Sans({
 
 export const metadata = {
   title: {
-    template: "%s The wild oasis",
+    template: "%s / The wild oasis",
     default: "Welcome / The wild oasis",
   },
   description:
@@ -26,8 +26,8 @@ export default function RootLayour({ children }) {
       >
         <Header />
 
-        <div className="flex-1 py-12 px-8">
-          <main className="max-w-7xl mx-auto">{children}</main>
+        <div className="flex-1 py-12 px-8 grid">
+          <main className="max-w-7xl mx-auto w-full">{children}</main>
         </div>
       </body>
     </html>
