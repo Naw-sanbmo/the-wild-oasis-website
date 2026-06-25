@@ -7,11 +7,8 @@ export const metadata = {
 
 export default async function Page() {
   // CHANGE
-  console.log("starting...");
 
   const cabins = await getCabins();
-
-  console.log(cabins);
 
   return (
     <div>
