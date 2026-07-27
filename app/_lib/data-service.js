@@ -142,34 +142,16 @@ export async function getSettings() {
 }
 
 export async function getCountries() {
-  const GET_COUNTRY_URL = "https://flagcdn.com";
   try {
-    const res = await fetch(`${GET_COUNTRY_URL}/en/codes.json`);
-
-    const data = await res.json();
-
-    const countries = Object.keys(data).map((key) => {
-      return { name: data[key], flag: `${GET_COUNTRY_URL}/${key}.svg` };
-    });
-
-//This will return an array with the same format as the one from the original getCountries so we don't have to change the code in other files.
-
+    const res = await fetch(
+      "https://countriesnow.space/api/v0.1/countries/flag/images",
+    );
+    const { data: countries } = await res.json();
     return countries;
   } catch {
     throw new Error("Could not fetch countries");
   }
 }
-// export async function getCountries() {
-//   try {
-//     const res = await fetch(
-//       "https://restcountries.com/v2/all?fields=name,flag",
-//     );
-//     const countries = await res.json();
-//     return countries;
-//   } catch {
-//     throw new Error("Could not fetch countries");
-//   }
-// }
 
 /////////////
 // CREATE
@@ -205,7 +187,7 @@ export async function createBooking(newBooking) {
 // UPDATE
 
 // The updatedFields is an object which should ONLY contain the updated data
-export async function updateGuest(id, updatedFields) {
+/* export async function updateGuest(id, updatedFields) {
   const { data, error } = await supabase
     .from("guests")
     .update(updatedFields)
@@ -234,6 +216,7 @@ export async function updateBooking(id, updatedFields) {
   }
   return data;
 }
+*/
 
 /////////////
 // DELETE
